@@ -1,5 +1,5 @@
 qx.Class.define("zx.server.puppeteer.PuppeteerClientTransport", {
-  extend: zx.io.api.client.AbstractClientTransport,
+  extend: zx.io.api.transport.AbstractClientTransport,
 
   /**
    *

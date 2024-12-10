@@ -8,7 +8,7 @@
  * `complete` to finish.
  */
 qx.Class.define("zx.thin.puppeteer.api.EmailBrowserApi", {
-  extend: zx.io.api.server.AbstractServerApi,
+  extend: zx.io.api.AbstractServerApi,
 
   construct() {
     super("zx.server.puppeteer.api.EmailApi");

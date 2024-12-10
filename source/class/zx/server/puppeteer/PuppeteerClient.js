@@ -220,11 +220,12 @@ qx.Class.define("zx.server.puppeteer.PuppeteerClient", {
 
       //wait until page is ready
       let pageReady = false;
-      const MAX_PASSES = 10;
+      const MAX_PASSES = 50;
       for (let pass = 0; pass < MAX_PASSES; pass++) {
-        let ready = await page.evaluate(() => zx.thin.puppeteer.PuppeteerServerTransport.getInstance().isReady());
+        let ready = await page.evaluate(() => zx?.thin?.puppeteer?.PuppeteerServerTransport?.getInstance().isReady());
         if (ready) {
           pageReady = true;
+          console.log(`took ${pass} passes`);
           break;
         }
         console.log("Page remote API not ready yet, waiting...");

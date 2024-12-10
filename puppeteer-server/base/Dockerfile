@@ -23,6 +23,8 @@ RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | 
     nvm install $NODE_VERSION
 RUN npm ci
 RUN npx -y playwright-core@^1.48.0 install --with-deps chromium
+RUN chown -R pptruser:pptruser "/home/pptruser/.npm"
+RUN chown -R pptruser:pptruser "/home/pptruser/node_modules"
 
 USER pptruser
 

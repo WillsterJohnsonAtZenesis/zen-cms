@@ -1,6 +1,5 @@
 qx.Class.define("zx.demo.remoteapi.BrowserTransportServer", {
-  extend: qx.core.Object,
-  implement: zx.io.api.server.IServerTransport,
+  extend: zx.io.api.transport.AbstractServerTransport,
 
   construct(client) {
     super();
@@ -22,7 +21,7 @@ qx.Class.define("zx.demo.remoteapi.BrowserTransportServer", {
      * @override
      */
     createPushResponse(session) {
-      return new zx.io.api.server.Response();
+      return new zx.io.api.ServerResponse();
     },
 
     sendPushResponse(response) {
@@ -34,9 +33,9 @@ qx.Class.define("zx.demo.remoteapi.BrowserTransportServer", {
     },
 
     async receiveMessage({ uri, data }) {
-      let request = new zx.io.api.server.Request(this, data);
-      let response = new zx.io.api.server.Response();
-      await zx.io.api.server.ConnectionManager.getInstance().receiveMessage(request, response);
+      let request = new zx.io.api.ServerRequest(this, data);
+      let response = new zx.io.api.ServerResponse();
+      await zx.io.api.ConnectionManager.getInstance().receiveMessage(request, response);
       this.postMessage(response.toNativeObject());
     }
   }

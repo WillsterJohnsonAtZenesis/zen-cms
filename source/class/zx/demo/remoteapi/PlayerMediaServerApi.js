@@ -1,5 +1,5 @@
 qx.Class.define("zx.demo.remoteapi.PlayerMediaServerApi", {
-  extend: zx.io.api.server.AbstractServerApi,
+  extend: zx.io.api.AbstractServerApi,
   construct() {
     super("zx.demo.remoteapi.PlayerMediaApi");
 
@@ -30,7 +30,7 @@ qx.Class.define("zx.demo.remoteapi.PlayerMediaServerApi", {
     __currentMedia: 7,
 
     /**
-     * @param {zx.io.api.server.MethodRequest} req
+     * @param {zx.io.api.MethodRequest} req
      */
     getCurrentMedia(req) {
       return new Promise((resolve, reject) => {
@@ -41,7 +41,7 @@ qx.Class.define("zx.demo.remoteapi.PlayerMediaServerApi", {
     },
 
     /**
-     * @param {zx.io.api.server.MethodRequest} req
+     * @param {zx.io.api.MethodRequest} req
      */
     playMedia(req) {
       const { id } = req.getParams();

@@ -1,6 +1,6 @@
 qx.Class.define("zx.server.puppeteer.api.PngClientApi", {
-  extend: zx.io.api.client.AbstractClientApi,
+  extend: zx.io.api.AbstractClientApi,
   construct(transport, uri) {
-    super(transport, "zx.server.puppeteer.api.PngApi", ["next"], uri);
+    super(transport, ["next"], uri);
   }
 });

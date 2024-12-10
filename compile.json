@@ -58,7 +58,7 @@
   ],
   "defaultTarget": "source",
   "locales": ["en"],
-  "libraries": [".", "../qxl.widgetbrowser", "../UploadMgr"],
+  "libraries": [".", "../qxl/widgetBrowser", "../../UploadManager"],
   "environment": {
     "qx.icontheme": "Tango",
     "zx.cms.client.theme": "zx.cms.client.theme.Simple",
@@ -147,6 +147,82 @@
       "exclude": ["qx.bom.Selector"],
       "type": "node",
       "class": "zx.demo.remoteapi.srv.ServerApp"
+    },
+
+    {
+      "title": "Demo app for running work in the same process",
+      "class": "zx.demo.work.Local",
+      "name": "local",
+      "type": "node",
+      "include": ["qx.core.Init"]
+    },
+    {
+      "title": "Demo app for running work in web workers (TODO: needs app loader)",
+      "class": "zx.demo.work.webWorkers.App",
+      "name": "web-workers",
+      "type": "browser",
+      "bootPath": "source/boot",
+      "include": ["qx.core.Init"]
+    },
+    {
+      "title": "Worker service for web workers (TODO: needs app loader)",
+      "class": "zx.demo.work.webWorkers.Service",
+      "name": "web-worker-service",
+      "description": "todo: we need a loader for web workers to make this functional",
+      "type": "browser"
+    },
+    {
+      "title": "Demo app for running work in node worker threads",
+      "class": "zx.demo.work.nodeWorkers.App",
+      "name": "node-workers",
+      "type": "node",
+      "include": ["qx.core.Init"]
+    },
+    {
+      "title": "Worker service for node worker threads",
+      "class": "zx.demo.work.nodeWorkers.Service",
+      "name": "node-worker-service",
+      "type": "node"
+    },
+    {
+      "title": "Demo app for running work in a separate node process",
+      "class": "zx.demo.work.localPeer.App",
+      "name": "local-peers",
+      "type": "node",
+      "include": ["qx.core.Init"]
+    },
+    {
+      "title": "Worker service for separate node process",
+      "class": "zx.demo.work.localPeer.Service",
+      "name": "local-peer-service",
+      "type": "node"
+    },
+    {
+      "title": "Demo app for running work in a docker container",
+      "class": "zx.demo.work.dockerPeer.App",
+      "name": "docker-peers",
+      "type": "node",
+      "include": ["qx.core.Init"]
+    },
+    {
+      "title": "Worker service for a docker container",
+      "class": "zx.demo.work.dockerPeer.Service",
+      "name": "docker-peer-service",
+      "type": "node"
+    },
+    {
+      "title": "Demo app for the worker pool part of a distributed work infrastructure",
+      "class": "zx.demo.work.remoteDocker.PoolApp",
+      "name": "remote-docker-pool",
+      "type": "node",
+      "include": ["qx.core.Init"]
+    },
+    {
+      "title": "Demo app for the work scheduler part of a distributed work infrastructure",
+      "class": "zx.demo.work.remoteDocker.SchedulerApp",
+      "name": "remote-docker-scheduler",
+      "type": "node",
+      "include": ["qx.core.Init"]
     }
   ],
   "sass": {

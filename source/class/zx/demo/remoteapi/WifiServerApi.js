@@ -1,5 +1,5 @@
 qx.Class.define("zx.demo.remoteapi.WifiServerApi", {
-  extend: zx.io.api.server.AbstractServerApi,
+  extend: zx.io.api.AbstractServerApi,
   construct() {
     super("zx.demo.remoteapi.WifiApi");
 

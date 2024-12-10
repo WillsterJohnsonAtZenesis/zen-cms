@@ -2,7 +2,7 @@
  * Remote API class for capturing a sequence of PNGs off a webpage
  */
 qx.Class.define("zx.thin.puppeteer.api.PngBrowserApi", {
-  extend: zx.io.api.server.AbstractServerApi,
+  extend: zx.io.api.AbstractServerApi,
   construct() {
     super("zx.server.puppeteer.api.PngApi");
   },

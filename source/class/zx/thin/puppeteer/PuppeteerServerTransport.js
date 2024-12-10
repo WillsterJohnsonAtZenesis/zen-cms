@@ -3,12 +3,13 @@
  */
 qx.Class.define("zx.thin.puppeteer.PuppeteerServerTransport", {
   type: "singleton",
-  extend: qx.core.Object,
-  implement: zx.io.api.server.IServerTransport,
+  extend: zx.io.api.transport.AbstractServerTransport,
+
   construct() {
     super();
     window.addEventListener("message", this._onMessage.bind(this), false);
   },
+
   members: {
     __ready: false,
     /**
@@ -56,9 +57,9 @@ qx.Class.define("zx.thin.puppeteer.PuppeteerServerTransport", {
         return;
       }
 
-      let request = new zx.io.api.server.Request(this, json);
-      let response = new zx.io.api.server.Response();
-      let connectionManager = zx.io.api.server.ConnectionManager.getInstance();
+      let request = new zx.io.api.ServerRequest(this, json);
+      let response = new zx.io.api.ServerResponse();
+      let connectionManager = zx.io.api.ConnectionManager.getInstance();
       await connectionManager.receiveMessage(request, response);
       this.postMessage(response.toNativeObject());
     },
@@ -74,7 +75,7 @@ qx.Class.define("zx.thin.puppeteer.PuppeteerServerTransport", {
 
     /**@override */
     createPushResponse() {
-      return new zx.io.api.server.Response();
+      return new zx.io.api.ServerResponse();
     },
 
     /**@override */

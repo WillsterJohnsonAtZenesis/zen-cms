@@ -12,6 +12,7 @@ qx.Interface.define("zx.io.api.IRequestJson", {
      * @type {string} The path of the API method to call
      */
     path: "",
+
     /**
      * NB: This object is empty when the request is a poll
      *

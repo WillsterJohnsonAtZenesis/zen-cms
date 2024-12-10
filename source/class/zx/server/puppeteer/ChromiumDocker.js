@@ -135,7 +135,7 @@ qx.Class.define("zx.server.puppeteer.ChromiumDocker", {
         Labels: {
           "zx.services.type": appConfig.label
         },
-        Env: ["CONNECTION_TIMEOUT=-1"],
+        Env: ["CONNECTION_TIMEOUT=-1", "ZX_MODE=puppeteer"],
         HostConfig: {
           AutoRemove: true,
           PortBindings: webServerPorts.bindings

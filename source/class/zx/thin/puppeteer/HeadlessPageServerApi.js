@@ -3,7 +3,7 @@
  * tasks that the client wants, e.g. taking PNGs, rendering PDFs, etc.
  */
 qx.Class.define("zx.thin.puppeteer.HeadlessPageServerApi", {
-  extend: zx.io.api.server.AbstractServerApi,
+  extend: zx.io.api.AbstractServerApi,
   construct() {
     super("zx.server.puppeteer.api.HeadlessPageApi");
     this.__promiseServerReady = new qx.Promise();

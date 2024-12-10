@@ -1,6 +1,6 @@
 qx.Class.define("zx.server.puppeteer.api.HeadlessPageClientApi", {
-  extend: zx.io.api.client.AbstractClientApi,
+  extend: zx.io.api.AbstractClientApi,
   construct(transport, uri) {
-    super(transport, "zx.server.puppeteer.api.HeadlessPageApi", ["waitForServer", "run"], uri);
+    super(transport, ["waitForServer", "run"], uri);
   }
 });

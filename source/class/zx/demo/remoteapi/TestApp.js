@@ -99,9 +99,9 @@ qx.Class.define("zx.demo.remoteapi.TestApp", {
       let clientTransport = new zx.demo.remoteapi.BrowserTransportClient(serverTransport);
       serverTransport.setClient(clientTransport);
 
-      let connectionManager = zx.io.api.server.ConnectionManager.getInstance();
+      let connectionManager = zx.io.api.ConnectionManager.getInstance();
       connectionManager.registerApi(new zx.demo.remoteapi.PlayerMediaServerApi(), "/player/media");
-      connectionManager.registerApi(new zx.demo.remoteapi.WifiServerApi());
+      connectionManager.registerApi(new zx.demo.remoteapi.WifiServerApi(), "/player/wifi/");
 
       return clientTransport;
     },
